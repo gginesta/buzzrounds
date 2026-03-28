@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "BuzzRounds — Party Games for Everyone",
   description:
     "A collection of multiplayer party games you can play with friends. Music trivia, general knowledge, and more.",
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "BuzzRounds",
     description: "Party games for everyone. Play with friends, no app required.",

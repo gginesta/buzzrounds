@@ -48,21 +48,21 @@ const games = [
 function StatusBadge({ status }: { status: "live" | "coming-soon" | "tbd" }) {
   if (status === "live") {
     return (
-      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-green-400 bg-green-400/10 px-2.5 py-1 rounded-full">
-        <span className="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot" />
+      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-green-700 bg-green-100 px-2.5 py-1 rounded-full">
+        <span className="w-1.5 h-1.5 rounded-full bg-green-500 pulse-dot" />
         LIVE
       </span>
     );
   }
   if (status === "coming-soon") {
     return (
-      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-yellow-400 bg-yellow-400/10 px-2.5 py-1 rounded-full">
+      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">
         COMING SOON
       </span>
     );
   }
   return (
-    <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 bg-slate-400/10 px-2.5 py-1 rounded-full">
+    <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">
       TBD
     </span>
   );
@@ -83,21 +83,6 @@ function GameCard({
       className={`game-card block rounded-2xl bg-[var(--bg-card)] p-8 ${
         isPlayable ? "cursor-pointer" : "cursor-default"
       }`}
-      style={{
-        // @ts-expect-error CSS custom properties
-        "--hover-glow": game.glowColor,
-        "--hover-border": game.borderHover,
-      }}
-      onMouseEnter={(e) => {
-        if (isPlayable) {
-          e.currentTarget.style.boxShadow = `0 20px 60px -15px ${game.glowColor}`;
-          e.currentTarget.style.borderColor = game.borderHover;
-        }
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = "";
-        e.currentTarget.style.borderColor = "";
-      }}
     >
       {/* Header */}
       <div className="flex items-start justify-between mb-6">
@@ -121,7 +106,7 @@ function GameCard({
         {game.features.map((f) => (
           <span
             key={f}
-            className="text-xs px-2.5 py-1 rounded-md bg-white/5 text-[var(--text-secondary)]"
+            className="text-xs px-2.5 py-1 rounded-md bg-slate-100 text-[var(--text-secondary)]"
           >
             {f}
           </span>
@@ -129,7 +114,7 @@ function GameCard({
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-between pt-4 border-t border-white/5">
+      <div className="flex items-center justify-between pt-4 border-t border-slate-100">
         <span className="text-xs text-[var(--text-secondary)]">
           👥 {game.players} players
         </span>
@@ -157,7 +142,7 @@ export default function Home() {
           href="https://github.com/gginesta"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-[var(--text-secondary)] hover:text-white transition-colors"
+          className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
         >
           GitHub
         </a>
@@ -191,7 +176,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 px-6 md:px-12 py-8 max-w-7xl mx-auto">
+      <footer className="border-t border-slate-200 px-6 md:px-12 py-8 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-[var(--text-secondary)]">
             © {new Date().getFullYear()} BuzzRounds
