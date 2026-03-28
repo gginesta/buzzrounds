@@ -80,29 +80,29 @@ function GameCard({
       href={isPlayable ? game.url : undefined}
       target={isPlayable ? "_blank" : undefined}
       rel={isPlayable ? "noopener noreferrer" : undefined}
-      className={`game-card block rounded-2xl bg-[var(--bg-card)] p-8 ${
+      className={`game-card block rounded-2xl bg-[var(--bg-card)] p-6 ${
         isPlayable ? "cursor-pointer" : "cursor-default"
       }`}
     >
       {/* Header */}
-      <div className="flex items-start justify-between mb-6">
-        <div className="text-5xl">{game.emoji}</div>
+      <div className="flex items-start justify-between mb-4">
+        <div className="text-4xl">{game.emoji}</div>
         <StatusBadge status={game.status} />
       </div>
 
       {/* Title */}
-      <h2 className="text-2xl font-bold mb-1">{game.name}</h2>
-      <p className="text-sm text-[var(--text-secondary)] mb-4">
+      <h2 className="text-xl font-bold mb-0.5">{game.name}</h2>
+      <p className="text-sm text-[var(--text-secondary)] mb-3">
         {game.tagline}
       </p>
 
       {/* Description */}
-      <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-6">
+      <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-4">
         {game.description}
       </p>
 
       {/* Features */}
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex flex-wrap gap-2 mb-4">
         {game.features.map((f) => (
           <span
             key={f}
@@ -114,7 +114,7 @@ function GameCard({
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+      <div className="flex items-center justify-between pt-3 border-t border-slate-100">
         <span className="text-xs text-[var(--text-secondary)]">
           👥 {game.players} players
         </span>
@@ -149,14 +149,13 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="px-6 md:px-12 pt-16 pb-20 max-w-7xl mx-auto">
+      <section className="px-6 md:px-12 pt-8 pb-10 max-w-7xl mx-auto">
         <div className="max-w-2xl">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.1] mb-3">
             Party games
-            <br />
-            <span className="gradient-text">for everyone.</span>
+            <span className="gradient-text"> for everyone.</span>
           </h1>
-          <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-lg">
+          <p className="text-base text-[var(--text-secondary)] leading-relaxed max-w-lg">
             Multiplayer games you play in the browser. No downloads, no signups.
             Just share a link and go.
           </p>
@@ -164,11 +163,11 @@ export default function Home() {
       </section>
 
       {/* Games Grid */}
-      <section className="px-6 md:px-12 pb-32 max-w-7xl mx-auto">
-        <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-8">
+      <section className="px-6 md:px-12 pb-10 max-w-7xl mx-auto">
+        <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-5">
           Games
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {games.map((game) => (
             <GameCard key={game.name} game={game} />
           ))}
@@ -176,8 +175,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 px-6 md:px-12 py-8 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+      <footer className="border-t border-slate-200 px-6 md:px-12 py-5 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-sm text-[var(--text-secondary)]">
             © {new Date().getFullYear()} BuzzRounds
           </p>
